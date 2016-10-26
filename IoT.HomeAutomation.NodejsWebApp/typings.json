@@ -1,0 +1,13 @@
+{
+  "globalDependencies": {
+    "browser-sync": "registry:dt/browser-sync#0.0.0+20160928124223",
+    "ejs": "registry:dt/ejs#0.0.0+20161003130526",
+    "express": "registry:dt/express#4.0.0+20160708185218",
+    "gulp": "registry:dt/gulp#3.8.0+20160907112908",
+    "gulp-less": "registry:dt/gulp-less#0.0.0+20160316155526",
+    "gulp-rename": "registry:dt/gulp-rename#0.0.0+20160817204333",
+    "gulp-uglify": "registry:dt/gulp-uglify#0.0.0+20160826020907",
+    "node": "registry:dt/node#6.0.0+20161019125345",
+    "sqlite3": "registry:dt/sqlite3#2.2.3+20160724070935"
+  }
+}
