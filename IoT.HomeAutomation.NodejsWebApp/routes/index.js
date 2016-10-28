@@ -6,16 +6,26 @@ var db = new sqlite3.Database('./sensor-data.db');
 
 
 router.get(['/', '/index'], function (reg, res) {
-    var dht11SensorData = [];
     db.serialize(() => {
-        db.each("SELECT id, temp, hum, timestamp FROM SensorReadings", function (err, row) {
-            dht11SensorData.push(row);
+        var today = new Date(new Date().setHours(0, 0, 0, 0));
+        db.all("SELECT id, temp, hum, timestamp FROM SensorReadings WHERE timestamp > " + today.getTime(), function (err, data) {
+            if (err) {
+                console.error(err.message);
+            } else {
+                var formattedData = [];
+                for (var i = 0, len = data.length; i < len; i++) {
+                    formattedData.push({
+                        temp: data[i].temp,
+                        hum: data[i].hum,
+                        time: new Date(data[i].timestamp).toLocaleString()
+                    });
+                }
+                res.render('index', {
+                    title: "Home Automation - Index page",
+                    sensorData: encodeURIComponent(JSON.stringify(formattedData))
+                });
+            }
         });
-    });
-
-    res.render('index', {
-        title: "Home Automation - Index page",
-        sensorData: dht11SensorData
     });
 });
 router.get('/login', function (reg, res) {

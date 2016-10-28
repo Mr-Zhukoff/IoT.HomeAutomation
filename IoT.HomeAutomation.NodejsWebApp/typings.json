@@ -3,6 +3,7 @@
     "browser-sync": "registry:dt/browser-sync#0.0.0+20160928124223",
     "ejs": "registry:dt/ejs#0.0.0+20161003130526",
     "express": "registry:dt/express#4.0.0+20160708185218",
+    "express-handlebars": "registry:dt/express-handlebars#0.0.0+20160316155526",
     "gulp": "registry:dt/gulp#3.8.0+20160907112908",
     "gulp-less": "registry:dt/gulp-less#0.0.0+20160316155526",
     "gulp-rename": "registry:dt/gulp-rename#0.0.0+20160817204333",

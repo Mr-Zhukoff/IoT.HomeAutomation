@@ -176,12 +176,10 @@
     <Content Include="public\vendor\morrisjs\morris.css" />
     <Content Include="README.md" />
     <Content Include="sensor-data.db" />
-    <Content Include="views\blank.ejs" />
-    <Content Include="views\index.ejs" />
-    <Content Include="views\login.ejs" />
-    <Content Include="views\partials\head.ejs" />
-    <Content Include="views\partials\navbar.ejs" />
-    <Content Include="views\partials\scripts.ejs" />
+    <Content Include="views\blank.handlebars" />
+    <Content Include="views\index.handlebars" />
+    <Content Include="views\layouts\main.handlebars" />
+    <Content Include="views\login.handlebars" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\" />
@@ -217,6 +215,7 @@
     <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\browser-sync\" />
     <Folder Include="typings\globals\ejs\" />
+    <Folder Include="typings\globals\express-handlebars\" />
     <Folder Include="typings\globals\express\" />
     <Folder Include="typings\globals\gulp-less\" />
     <Folder Include="typings\globals\gulp-rename\" />
@@ -225,11 +224,12 @@
     <Folder Include="typings\globals\node\" />
     <Folder Include="typings\globals\sqlite3\" />
     <Folder Include="views\" />
-    <Folder Include="views\partials\" />
+    <Folder Include="views\layouts\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="typings\globals\browser-sync\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\ejs\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\express-handlebars\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\gulp-less\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\gulp-rename\index.d.ts" />

@@ -1,5 +1,6 @@
 /// <reference path="globals/browser-sync/index.d.ts" />
 /// <reference path="globals/ejs/index.d.ts" />
+/// <reference path="globals/express-handlebars/index.d.ts" />
 /// <reference path="globals/express/index.d.ts" />
 /// <reference path="globals/gulp-less/index.d.ts" />
 /// <reference path="globals/gulp-rename/index.d.ts" />

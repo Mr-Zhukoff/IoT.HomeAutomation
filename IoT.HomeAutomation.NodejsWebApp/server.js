@@ -1,11 +1,14 @@
 ﻿var http = require('http');
 var express = require('express');
+var exphbs = require('express-handlebars');
 var sqlite3 = require('sqlite3').verbose();
 
 var port = Number(process.env.PORT || 3000);
 var app = express();
+
 app.use(express.static(__dirname + '/public'));
-app.set('view engine', 'ejs');
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
 var db = new sqlite3.Database('./sensor-data.db');
 
