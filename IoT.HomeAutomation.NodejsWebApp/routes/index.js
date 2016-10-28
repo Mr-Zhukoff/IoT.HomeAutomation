@@ -1,11 +1,22 @@
 ﻿var express = require('express');
 var router = express.Router();
+var sqlite3 = require('sqlite3').verbose();
 
-router.get('/', function (reg, res) {
-    res.render('index');
-});
-router.get('/index', function (reg, res) {
-    res.render('index');
+var db = new sqlite3.Database('./sensor-data.db');
+
+
+router.get(['/', '/index'], function (reg, res) {
+    var dht11SensorData = [];
+    db.serialize(() => {
+        db.each("SELECT id, temp, hum, timestamp FROM SensorReadings", function (err, row) {
+            dht11SensorData.push(row);
+        });
+    });
+
+    res.render('index', {
+        title: "Home Automation - Index page",
+        sensorData: dht11SensorData
+    });
 });
 router.get('/login', function (reg, res) {
     res.render('login');

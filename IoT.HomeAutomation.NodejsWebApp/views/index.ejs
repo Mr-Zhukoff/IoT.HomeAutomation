@@ -576,7 +576,7 @@
                     <!-- /.panel .chat-panel -->
                 </div>
                 <!-- /.col-lg-4 -->
-            </div>
+            <!--</div>-->
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
@@ -585,7 +585,24 @@
     <!-- /#wrapper -->
 
     <% include partials/scripts.ejs %>
-
+    <script type='text/javascript'>
+        $(function () {
+            debugger;
+            //var data = "Test";
+            var data = JSON.parse('<%- sensorData %>');
+            alert(data.toString());
+            Morris.Area({
+                element: 'morris-area-chart',
+                data: data,
+                xkey: 'timestamp',
+                ykeys: ['temp', 'hum',],
+                labels: ['Temperature', 'Humidity'],
+                pointSize: 2,
+                hideHover: 'auto',
+                resize: true
+            });
+        })();
+    </script>
 </body>
 
 </html>

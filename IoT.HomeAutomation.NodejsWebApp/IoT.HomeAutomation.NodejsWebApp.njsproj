@@ -175,6 +175,7 @@
     <Content Include="public\vendor\metisMenu\metisMenu.min.css" />
     <Content Include="public\vendor\morrisjs\morris.css" />
     <Content Include="README.md" />
+    <Content Include="sensor-data.db" />
     <Content Include="views\blank.ejs" />
     <Content Include="views\index.ejs" />
     <Content Include="views\login.ejs" />
